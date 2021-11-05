@@ -19,8 +19,7 @@ export class CourseListComponent implements OnInit{
     }
 
     ngOnInit(): void{
-        this._courses = this.courseService.retrieveAll();
-        this._filteredCourses = this._courses;
+        this.retrieveAll();
     }
 
     set filter(value: string){
@@ -31,5 +30,15 @@ export class CourseListComponent implements OnInit{
 
     get filter(){
         return this._filterBy;
+    }
+
+    retrieveAll(): void{
+         this.courseService.retrieveAll().subscribe({
+            next: courses => {
+                this._courses = courses;
+                this._filteredCourses = this._courses;
+            },
+            error: err => console.log('Erro: ' + err)
+        });
     }
 }

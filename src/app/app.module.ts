@@ -6,6 +6,7 @@ import { StarComponent } from './star/star.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CourseListComponent } from './courses/course-list.component';
@@ -24,6 +25,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: 'courses', component: CourseListComponent
