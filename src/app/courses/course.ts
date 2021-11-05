@@ -1,4 +1,4 @@
-class Course {
+export class Course {
     id: number;
     name: string;
     imageUrl: string;
@@ -7,4 +7,5 @@ class Course {
     duration: number;
     rating: number;
     releaseDate: string;
+    description: string;
 }
